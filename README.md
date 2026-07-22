@@ -1,4 +1,4 @@
-# ArmKit — a Docs-as-Code documentation example
+# ArmKit: a Docs-as-Code documentation example
 
 ArmKit is a small Python wrapper around the [PyBullet](https://pybullet.org)
 physics engine for loading and moving a simulated robot arm. The code is
@@ -7,7 +7,7 @@ pipeline**.
 
 It demonstrates an end-to-end Docs-as-Code workflow:
 
-- **Source in Git** — every doc is plain text under version control.
+- **Source in Git**: every doc is plain text under version control.
 - **Written in Markdown** (via MyST), with reStructuredText where it helps.
 - **Built with Sphinx**, using the Furo theme.
 - **API reference auto-generated** from docstrings with `autodoc` + `napoleon`,
