@@ -1,10 +1,9 @@
-name: Build and deploy docs
+name: Docs
 
 on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
 
 permissions:
   contents: read
@@ -12,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: docs
   cancel-in-progress: true
 
 jobs:
@@ -20,26 +19,48 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
-      - name: Install documentation dependencies
-        run: pip install -r requirements.txt
-      - name: Build docs (warnings fail the build)
-        run: sphinx-build -b html docs docs/_build/html -W --keep-going
-      - name: Upload Pages artifact
+          python-version: "3.11"
+          cache: pip
+
+      # Doxygen parses the C++ headers into XML. Breathe then feeds that XML
+      # into Sphinx, so the Python and C++ references build into one site with
+      # one theme and one search index.
+      - name: Install Doxygen
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install -e .
+
+      # -W turns Sphinx warnings into errors, and the Doxyfile sets
+      # WARN_AS_ERROR, so a broken cross-reference, a dead link or an
+      # undocumented public symbol fails the build instead of shipping.
+      - name: Build documentation
+        run: sphinx-build -b html -W --keep-going docs docs/_build/html
+
+      - name: Check external links
+        run: sphinx-build -b linkcheck docs docs/_build/linkcheck
+        continue-on-error: true
+
+      - name: Upload artifact
+        if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs/_build/html
 
   deploy:
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4

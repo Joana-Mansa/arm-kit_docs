@@ -1,0 +1,35 @@
+# Doxygen configuration for the ArmKit C++ API.
+#
+# Run from the docs/ directory:   doxygen Doxyfile
+# Produces XML only. HTML rendering is handled by Sphinx via Breathe, so there
+# is exactly one published site rather than two competing ones.
+
+PROJECT_NAME           = "ArmKit C++"
+PROJECT_BRIEF          = "C++ interfaces for the ArmKit simulated arm"
+
+INPUT                  = ../cpp/include
+FILE_PATTERNS          = *.hpp *.h
+RECURSIVE              = YES
+
+OUTPUT_DIRECTORY       = _doxygen
+GENERATE_HTML          = NO
+GENERATE_LATEX         = NO
+GENERATE_XML           = YES
+XML_OUTPUT             = xml
+XML_PROGRAMLISTING     = NO
+
+# Document everything that is public, but do not silently pass over
+# undocumented entities: an undocumented public symbol is a review finding.
+EXTRACT_ALL            = NO
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = NO
+HIDE_UNDOC_MEMBERS     = NO
+HIDE_UNDOC_CLASSES     = NO
+
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_AS_ERROR          = FAIL_ON_WARNINGS
+
+QUIET                  = YES
+JAVADOC_AUTOBRIEF      = YES
+MARKDOWN_SUPPORT       = YES

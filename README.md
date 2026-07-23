@@ -44,13 +44,22 @@ python examples/move_arm.py
 docs/            Documentation source (Markdown), organised by Diátaxis
   tutorials/     Learning-oriented
   how-to/        Task-oriented
-  reference/     Auto-generated API reference
+  reference/     Auto-generated API reference (Python via autodoc, C++ via Doxygen + Breathe)
   explanation/   Background and concepts
   style-guide.md Authoring standards
+  Doxyfile       Doxygen configuration (XML output, consumed by Breathe)
 src/armkit/      The documented Python package
+cpp/             C++ headers and sources documented via Doxygen
+  include/armkit/
+  src/
 examples/        Runnable example script
 .github/         CI/CD workflow, PR and issue templates
 ```
+
+## Acknowledgements
+
+Claude (Anthropic) was used as a resource to improve code and documentation
+in this repository.
 
 ## Publishing
 

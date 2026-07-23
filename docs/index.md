@@ -31,6 +31,7 @@ how-to/run-headless
 :caption: Reference
 
 reference/api
+reference/cpp-api
 ```
 
 ```{toctree}
@@ -58,8 +59,10 @@ style-guide
   - {doc}`tutorials/first-arm`
 * - Solve a specific task
   - {doc}`how-to/set-joint-angles`
-* - Look up a function signature
+* - Look up a Python function signature
   - {doc}`reference/api`
+* - Look up a C++ class or enum
+  - {doc}`reference/cpp-api`
 * - Understand a concept
   - {doc}`explanation/forward-kinematics`
 :::
