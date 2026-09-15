@@ -37,5 +37,5 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 # -- HTML output -------------------------------------------------------------
 html_theme = "furo"
-html_static_path = ["_static"]
+html_static_path = []  # No custom static assets are currently committed.
 html_title = "ArmKit Documentation"

@@ -57,3 +57,9 @@ examples/        Runnable example script
 Pushing to `main` triggers `.github/workflows/docs.yml`, which builds the site
 and deploys it to GitHub Pages. Enable Pages once under
 **Settings → Pages → Source: GitHub Actions**.
+
+## Verification and development branches
+
+The headless example was checked on 15 September 2026: after 240 steps, joint 1 reached 0.500 rad for a 0.5 rad command. The documentation build is checked with warnings treated as errors.
+
+The `docs/add-cpp-reference` branch contains an experimental C++/Doxygen extension. It is not part of the default Python package or published main-branch reference; its source and documentation need a separate integration review before release.
