@@ -11,12 +11,11 @@ It demonstrates an end-to-end Docs-as-Code workflow:
 - **Written in Markdown** (via MyST), with reStructuredText where it helps.
 - **Built with Sphinx**, using the Furo theme.
 - **API reference auto-generated** from docstrings with `autodoc` + `napoleon`,
-  so the reference never drifts from the code.
+  so API signatures are generated from the code.
 - **Structured with [Diátaxis](https://diataxis.fr)**: tutorials, how-to
   guides, reference, and explanation are kept separate.
 - **Published automatically** by GitHub Actions to GitHub Pages on every push to
-  `main`. Warnings fail the build, so broken links and bad references are caught
-  in review.
+  `main`. Warnings fail the build, including unresolved internal references.
 - **Authoring standards** captured in a [style guide](docs/style-guide.md),
   including translation-friendly writing rules.
 

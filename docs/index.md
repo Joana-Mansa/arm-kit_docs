@@ -2,7 +2,7 @@
 
 ArmKit is a tiny Python wrapper around the [PyBullet](https://pybullet.org)
 physics engine. It lets you load a robot arm into a simulation and move its
-joints in a few lines of code — no hardware required.
+joints in a few lines of code: no hardware required.
 
 This site is also a worked example of a **Docs-as-Code** documentation set: it
 is written in Markdown, kept under version control in Git, built with Sphinx,

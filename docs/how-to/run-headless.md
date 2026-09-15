@@ -18,7 +18,7 @@ arm = ArmController(gui=False)
 arm.load_arm()
 ```
 
-Everything else works the same — command joints and step the simulation:
+Everything else works the same: command joints and step the simulation:
 
 ```python
 arm.set_joint_angle(1, 0.5)

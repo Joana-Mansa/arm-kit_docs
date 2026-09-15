@@ -1,7 +1,7 @@
 # Documentation style guide
 
 These are the writing rules for this project. They keep the documentation
-consistent, clear, and — importantly — cheap to translate, since the same
+consistent, clear, and easy to translate, since the same
 content is often published in several languages.
 
 ## Voice and structure
@@ -17,7 +17,7 @@ content is often published in several languages.
 - Prefer **short sentences**, one instruction each. Short, simple sentences are
   easier to read and far cheaper and more accurate to translate.
 - Use **one term for one thing**, every time. The part at the end of the arm is
-  always the "end effector" — not "hand", "tip", or "gripper" interchangeably.
+  always the "end effector": not "hand", "tip", or "gripper" interchangeably.
   Consistent terminology is the single biggest lever on translation quality.
 - Avoid idioms, humour, and culture-specific references. They rarely survive
   translation.
@@ -34,13 +34,13 @@ content is often published in several languages.
 This project is a learning example, but it is written with the same standards a
 product team would apply:
 
-- **IEC/IEEE 82079-1** — the international standard for the structure and content
+- **IEC/IEEE 82079-1**: the international standard for the structure and content
   of instructions for use. It drives the task-oriented, minimal-step approach
   here.
-- **EU Machinery Regulation / Directive** — governs the safety information that
+- **EU Machinery Regulation / Directive**: governs the safety information that
   must accompany machinery, including robots. Production documentation must meet
   it; this example points to where such content would live.
-- **Translation-friendly authoring** — the sentence and terminology rules above
+- **Translation-friendly authoring**: the sentence and terminology rules above
   exist so content can move into a translation workflow with minimal rework.
 
 ## Before you open a pull request

@@ -13,7 +13,7 @@ space. How does a list of joint angles turn into the position of the hand?
 A robot arm is a chain of rigid links connected by joints. Each joint adds a
 known rotation or slide. **Forward kinematics** is the calculation that takes
 the angle of every joint and works out, link by link along the chain, where the
-end of the arm — the *end effector* — sits in space.
+end of the arm (the *end effector*) sits in space.
 
 The key property is that forward kinematics has exactly one answer. Given a full
 set of joint angles, there is a single position and orientation for the hand. The
@@ -22,7 +22,7 @@ reading `get_joint_angle()` after a move is enough to know the arm's pose.
 
 ## The harder direction
 
-The reverse question — "what joint angles put the hand *here*?" — is called
+The reverse question ("what joint angles put the end effector here?") is called
 **inverse kinematics**, and it is much harder. There may be several valid
 answers, or none. ArmKit deliberately stays on the forward side: you command
 joints, and the simulator tells you where the arm went.

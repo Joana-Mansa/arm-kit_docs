@@ -27,5 +27,5 @@ right Diátaxis category for each page.
 ## Adding to the API reference
 
 The reference is generated from docstrings in `src/armkit/`. To document new
-code, write a Google-style docstring on the function or class — it will appear
+code, write a Google-style docstring on the function or class: it will appear
 in the reference automatically on the next build. Do not hand-write API docs.
